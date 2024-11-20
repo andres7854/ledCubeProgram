@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LedCube Sequences</title>
+
+    <style>
+        .column{
+            flex-direction: column-reverse;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px;
+        }
+        .floor{
+            rotate: -40deg;
+        }
+        input[type="checkbox"]{
+            display: none;
+        }
+        label{
+            margin: 5px;
+            rotate: 40deg;
+            cursor: pointer;
+        }
+        span{
+            display: inline-block;
+            position: relative;
+            background-color: white;
+            border: 2px solid blue;
+            height: 20px;
+            width: 15px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        label input:checked ~ span{
+            background-color: blue;
+        }
+        button{
+            border: 2px solid black;
+            border-radius: 10px;
+            margin: 5px;
+        }
+    </style>
+
+    <script src="logic.js"></script>
+
+</head>
+<body>
+    <br>
+    <div id="floor5" >
+        <h1 style="margin: 50px;">PISO 5</h1>
+        <div class="floor">
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led1" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led2" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led3" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led4" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led5" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led6" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led7" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led8" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led9" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led10" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led11" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led12" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led13" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led14" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led15" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led16" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led17" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led18" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led19" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led20" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led21" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led22" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led23" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led24" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led25" class="led">
+                    <span></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div id="floor4" >
+        <h1 style="margin: 50px;">PISO 4</h1>
+        <div class="floor">
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led1" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led2" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led3" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led4" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led5" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led6" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led7" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led8" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led9" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led10" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led11" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led12" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led13" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led14" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led15" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led16" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led17" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led18" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led19" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led20" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led21" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led22" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led23" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led24" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led25" class="led">
+                    <span></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div id="floor3" >
+        <h1 style="margin: 50px;">PISO 3</h1>
+        <div class="floor">
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led1" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led2" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led3" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led4" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led5" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led6" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led7" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led8" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led9" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led10" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led11" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led12" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led13" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led14" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led15" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led16" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led17" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led18" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led19" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led20" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led21" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led22" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led23" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led24" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led25" class="led">
+                    <span></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div id="floor2" >
+        <h1 style="margin: 50px;">PISO 2</h1>
+        <div class="floor">
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led1" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led2" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led3" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led4" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led5" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led6" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led7" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led8" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led9" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led10" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led11" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led12" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led13" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led14" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led15" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led16" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led17" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led18" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led19" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led20" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led21" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led22" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led23" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led24" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led25" class="led">
+                    <span></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div id="floor1" >
+        <h1 style="margin: 50px;">PISO 1</h1>
+        <div class="floor">
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led1" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led2" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led3" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led4" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led5" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led6" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led7" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led8" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led9" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led10" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led11" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led12" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led13" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led14" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led15" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led16" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led17" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led18" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led19" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led20" class="led">
+                    <span></span>
+                </label>
+            </div>
+            <div class="column">
+                <label>
+                    <input type="checkbox" id="led21" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led22" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led23" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led24" class="led">
+                    <span></span>
+                </label>
+                <label>
+                    <input type="checkbox" id="led25" class="led">
+                    <span></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div>
+        <button onclick="previousArray()">
+            <h3>ANTERIOR ARRAY</h3>
+        </button>
+        <button onclick="saveArray()">
+            <h3>GUARDAR ARRAY</h3>
+        </button>
+        <button onclick="nextArray()">
+            <h3>SIGUIENTE ARRAY</h3>
+        </button>
+    </div>
+    <div>
+        <button id="generateButton" onclick="generateSequence()">
+            <h3>GENERAR SECUENCIA</h3>
+        </button>
+        <input type="text" placeholder="NOMBRE DE SECUENCIA" id="nameOfSequence">
+        <textarea name="" id="finalSequence"></textarea>
+    </div>
+</body>
+</html>
