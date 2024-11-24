@@ -110,7 +110,7 @@ function generateSequence()
     `void ${nameOfSequence}()\n{`;
     for (var bitsMatrix = 0; bitsMatrix < arrays.length; bitsMatrix++) 
     {
-        sequence += `\nbyte bitsMatrix${bitsMatrix+1}[5][32] ={`;
+        sequence += `\nstatic const byte bitsMatrix${bitsMatrix+1}[5][32] PROGMEM ={`;
         for (let floor = 0; floor < 5; floor++)
         {
             sequence += `{`;
