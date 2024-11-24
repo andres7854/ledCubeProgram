@@ -18,7 +18,7 @@
         .floor{
             rotate: -40deg;
         }
-        input[type="checkbox"]{
+        .led{
             display: none;
         }
         label{
@@ -643,8 +643,24 @@
         <button onclick="saveArray()">
             <h3>GUARDAR ARRAY</h3>
         </button>
+        <div style="flex-direction: column;">
+            <h6 style="margin: 0px;">¿MANTENER ANTERIOR ARRAY</h6>
+            <h6 style="margin: 0px;">AL GENERAR NUEVO?</h6>
+            <input type="checkbox" id="keepArrayCheck">
+        </div>
         <button onclick="nextArray()">
             <h3>SIGUIENTE ARRAY</h3>
+        </button>
+    </div>
+    <div>
+        <input type="number" placeholder="MS DE DURACION" id="timeOfArray">
+        <div style="flex-direction: column;">
+            <h6 style="margin: 0px;">¿MANTENER EN LOOP</h6>
+            <h6 style="margin: 0px;">LA SIMULACION?</h6>
+            <input type="checkbox" id="keepLoopSimulation">
+        </div>
+        <button id="simulateButton" onclick="simulateSequence()">
+            <h3>SIMULAR SECUENCIA</h3>
         </button>
     </div>
     <div>

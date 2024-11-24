@@ -12,11 +12,15 @@ function previousArray()
             {
                 for (let led = 0; led < 5; led++) {
                     var actualLed = document.getElementById(`floor${floor+1}`).children[1].children[row].children[led].children[0];
-                    for (var ledOfArr = 0; ledOfArr < 32; ledOfArr++)
+                    for (var ledOfArr = 0; ledOfArr < 33; ledOfArr++)
                     {
+                        if (ledOfArr == 0)
+                        {
+                            document.getElementById("timeOfArray").value = arrays[actualArray][floor][ledOfArr]     
+                        }
                         if(`led${ledOfArr}` == actualLed.id)
                         {
-                            actualLed.checked = arrays[actualArray][floor][ledOfArr-1] == 1 ? true : false; 
+                            actualLed.checked = arrays[actualArray][floor][ledOfArr] == 1 ? true : false; 
                             break
                         }
                     }
@@ -37,11 +41,15 @@ function nextArray()
             {
                 for (let led = 0; led < 5; led++) {
                     var actualLed = document.getElementById(`floor${floor+1}`).children[1].children[row].children[led].children[0];
-                    for (var ledOfArr = 0; ledOfArr < 32; ledOfArr++)
+                    for (var ledOfArr = 0; ledOfArr < 33; ledOfArr++)
                     {
+                        if (ledOfArr == 0)
+                        {
+                            document.getElementById("timeOfArray").value = arrays[actualArray][floor][ledOfArr]     
+                        }
                         if(`led${ledOfArr}` == actualLed.id)
                         {
-                            actualLed.checked = arrays[actualArray][floor][ledOfArr-1] == 1 ? true : false;
+                            actualLed.checked = arrays[actualArray][floor][ledOfArr] == 1 ? true : false;
                             break
                         }
                     }
@@ -57,11 +65,19 @@ function nextArray()
             for (var floor = 0; floor < 5; floor++) 
             {
                 var floorArray = [];
+                floorArray.push(document.getElementById("timeOfArray").value);
                 for (let row = 0; row < 5; row++)
                 {
-                    for (let led = 0; led < 5; led++) {
+                    for (let led = 0; led < 5; led++)
+                    {
                         var actualLed = document.getElementById(`floor${floor+1}`).children[1].children[row].children[led].children[0];
-                        actualLed.checked == false ? floorArray.push(0) : floorArray.push(1); 
+                        if (document.getElementById("keepArrayCheck").checked == true)
+                        {
+                            actualLed.checked == false ? floorArray.push(0) : floorArray.push(1);    
+                        }else
+                        {
+                            actualLed.checked = false;
+                        }                         
                     }
                 }
                 newArray.push(floorArray);
@@ -80,6 +96,7 @@ function saveArray()
     for (var floor = 0; floor < 5; floor++) 
     {
         var floorArray = [];
+        floorArray.push(document.getElementById("timeOfArray").value);
         for (let row = 0; row < 5; row++)
         {
             for (let led = 0; led < 5; led++) {
@@ -110,29 +127,98 @@ function generateSequence()
     for (var bitsMatrix = 0; bitsMatrix < arrays.length; bitsMatrix++) 
     {
         sequence += `\nstatic const byte bitsMatrix${bitsMatrix+1}[5][32] PROGMEM = {`;
-        for (let floor = 0; floor < 5; floor++)
+        for (let floor = 0; floor < 6; floor++)
         {
-            sequence += `{`;
-            for (var led = 0; led < 32; led++)
+            if (floor != 0)
             {
-                if (led != 31)
+                sequence += `{`;
+                for (var led = 0; led < 33; led++)
                 {
-                    sequence += `${arrays[bitsMatrix][floor][led]},`;
-                }else{
-                    sequence += `${arrays[bitsMatrix][floor][led]}`;
+                    if (led != 0)
+                    {
+                        if (led != 32)
+                        {
+                            sequence += `${arrays[bitsMatrix][floor-1][led]},`;
+                        }else{
+                            sequence += `${arrays[bitsMatrix][floor-1][led]}`;
+                        }   
+                    }
                 }
-            }
-            if (floor != 4)
-            {
-                sequence += `},`;
-            }else
-            {
-                sequence += `}`;
+                if (floor != 5)
+                {
+                    sequence += `},`;
+                }else
+                {
+                    sequence += `}`;
+                }
             }
         }
         sequence += `};\n`;
-        sequence += `showMatrix(t[0], ${bitsMatrix+1}, bitsMatrix${bitsMatrix+1}, ${bitsMatrix != arrays.length-1 ? "false" : "true"});`;
-        sequence += bitsMatrix == arrays.length-1 ? "}" : "";
+        sequence += `showMatrix(${arrays[bitsMatrix][0][0]}, ${bitsMatrix+1}, bitsMatrix${bitsMatrix+1}, ${bitsMatrix != arrays.length-1 ?"false":"true"});`;
+        sequence += bitsMatrix == arrays.length-1 ? "\n}" : "";
     }
     document.getElementById("finalSequence").textContent = sequence;
+}
+
+function delay(ms)
+{
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function simulateSequence() 
+{
+    console.log("simulando");
+    for(var array = 0; array < arrays.length; array++)
+    {
+        for (var floor = 0; floor < 5; floor++) 
+        {
+            for (let row = 0; row < 5; row++)
+            {
+                for (let led = 0; led < 5; led++) {
+                    var actualLed = document.getElementById(`floor${floor+1}`).children[1].children[row].children[led].children[0];
+                    for (var ledOfArr = 0; ledOfArr < 33; ledOfArr++)
+                    {
+                        if (ledOfArr == 0)
+                        {
+                            document.getElementById("timeOfArray").value = arrays[array][0][0];     
+                        }
+                        if(`led${ledOfArr}` == actualLed.id)
+                        {
+                            actualLed.checked = arrays[array][floor][ledOfArr] == 1 ? true : false;
+                            break
+                        }
+                    }
+                }
+            }
+            
+        }
+        await delay(arrays[array][0][0]);
+        if (document.getElementById("keepLoopSimulation").checked == true && array == arrays.length-1)
+        {
+            array = -1;
+        }
+    }
+
+    console.log("simulacion finalizada");
+    for (var floor = 0; floor < 5; floor++) 
+    {
+        for (let row = 0; row < 5; row++)
+        {
+            for (let led = 0; led < 5; led++) {
+                var actualLed = document.getElementById(`floor${floor+1}`).children[1].children[row].children[led].children[0];
+                for (var ledOfArr = 0; ledOfArr < 33; ledOfArr++)
+                {
+                    if (ledOfArr == 0)
+                    {
+                        document.getElementById("timeOfArray").value = arrays[actualArray][floor][ledOfArr]     
+                    }
+                    if(`led${ledOfArr}` == actualLed.id)
+                    {
+                        actualLed.checked = arrays[actualArray][floor][ledOfArr] == 1 ? true : false;
+                        break
+                    }
+                }
+            }
+        }
+    }
 }
