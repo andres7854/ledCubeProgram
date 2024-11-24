@@ -61,8 +61,7 @@ function nextArray()
                 {
                     for (let led = 0; led < 5; led++) {
                         var actualLed = document.getElementById(`floor${floor+1}`).children[1].children[row].children[led].children[0];
-                        actualLed.checked = false;
-                        floorArray.push(0);
+                        actualLed.checked == false ? floorArray.push(0) : floorArray.push(1); 
                     }
                 }
                 newArray.push(floorArray);
@@ -110,7 +109,7 @@ function generateSequence()
     `void ${nameOfSequence}()\n{`;
     for (var bitsMatrix = 0; bitsMatrix < arrays.length; bitsMatrix++) 
     {
-        sequence += `\nstatic const byte bitsMatrix${bitsMatrix+1}[5][32] PROGMEM ={`;
+        sequence += `\nstatic const byte bitsMatrix${bitsMatrix+1}[5][32] PROGMEM = {`;
         for (let floor = 0; floor < 5; floor++)
         {
             sequence += `{`;
