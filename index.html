@@ -637,15 +637,19 @@
     <br>
     <br>
     <div>
+        <button onclick="saveChanges()">
+            <h3>GUARDAR CAMBIOS</h3>
+        </button>
+    </div>
+    <div>
         <button onclick="previousArray()">
             <h3>ANTERIOR ARRAY</h3>
         </button>
-        <button onclick="saveArray()">
-            <h3>GUARDAR ARRAY</h3>
+        <button onclick="deleteArray()">
+            <h3>ELIMINAR ARRAY</h3>
         </button>
-        <div style="flex-direction: column;">
-            <h6 style="margin: 0px;">¿MANTENER ANTERIOR ARRAY</h6>
-            <h6 style="margin: 0px;">AL GENERAR NUEVO?</h6>
+        <div style="flex-direction: column; border: 2px, solid, black; border-radius: 10px;">
+            <h6 style="margin: 0px;">¿MANTENER ANTERIOR ARRAY AL GENERAR NUEVO?</h6>
             <input type="checkbox" id="keepArrayCheck">
         </div>
         <button onclick="nextArray()">
@@ -654,9 +658,8 @@
     </div>
     <div>
         <input type="number" placeholder="MS DE DURACION" id="timeOfArray">
-        <div style="flex-direction: column;">
-            <h6 style="margin: 0px;">¿MANTENER EN LOOP</h6>
-            <h6 style="margin: 0px;">LA SIMULACION?</h6>
+        <div style="flex-direction: column; border: 2px, solid, black; border-radius: 10px;">
+            <h6 style="margin: 0px;">¿MANTENER EN LOOP LA SIMULACION?</h6>
             <input type="checkbox" id="keepLoopSimulation">
         </div>
         <button id="simulateButton" onclick="simulateSequence()">
@@ -669,6 +672,17 @@
         </button>
         <input type="text" placeholder="NOMBRE DE SECUENCIA" id="nameOfSequence">
         <textarea name="" id="finalSequence"></textarea>
+    </div>
+    <div>
+        <button id="generateButton" onclick="previousSequence()">
+            <h3>ANTERIOR SECUENCIA</h3>
+        </button>
+        <button id="generateButton" onclick="deleteSequence()">
+            <h3>ELIMINAR SECUENCIA</h3>
+        </button>
+        <button id="generateButton" onclick="nextSequence()">
+            <h3>SIGUIENTE SECUENCIA</h3>
+        </button>
     </div>
 </body>
 </html>
